@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Mosaiqo\Hexagonal\Finder;
+namespace Mosaiqo\Hexagonal\Finder\Traits;
 
 use Exception;
 use InvalidArgumentException;
