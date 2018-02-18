@@ -13,7 +13,14 @@
       "Mosaiqo\\Hexagonal\\": "src/"
     }
   },
-  "require": {},
+  "require": {
+    "symfony/console": "^4.0",
+    "symfony/process": "^4.0",
+    "symfony/finder": "^4.0",
+    "symfony/filesystem": "^4.0",
+    "stevebauman/log-reader": "^1.1",
+    "illuminate/support": "^5.6"
+  },
   "extra": {
     "laravel": {
       "providers": [
