@@ -3,7 +3,7 @@ namespace Mosaiqo\Hexagonal;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Artisan;
-
+use Mosaiqo\Hexagonal\Console\Commands\MakeServiceCommand;
 
 
 class HexagonalServiceProvider extends ServiceProvider {
@@ -20,7 +20,8 @@ class HexagonalServiceProvider extends ServiceProvider {
 		]);
 
 		$this->commands([
-			\Mosaiqo\Hexagonal\Console\Commands\ChangeSourceNamespaceCommand::class
+			\Mosaiqo\Hexagonal\Console\Commands\ChangeSourceNamespaceCommand::class,
+			\Mosaiqo\Hexagonal\Console\Commands\MakeServiceCommand::class,
 		]);
 	}
 

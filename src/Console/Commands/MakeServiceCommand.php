@@ -8,6 +8,7 @@
  * file that was distributed with this source code.
  */
 namespace Mosaiqo\Hexagonal\Console\Commands;
+
 use Mosaiqo\Hexagonal\Finder\Traits\Finder;
 use Mosaiqo\Hexagonal\Console\Traits\Command;
 use Mosaiqo\Hexagonal\Filesystem\Traits\Filesystem;

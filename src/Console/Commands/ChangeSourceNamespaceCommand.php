@@ -9,8 +9,8 @@
  */
 namespace Mosaiqo\Hexagonal\Console\Commands;
 
-use Mosaiqo\Hexagonal\Console\Command;
-use Mosaiqo\Hexagonal\Finder\Finder;
+use Mosaiqo\Hexagonal\Console\Traits\Command;
+use Mosaiqo\Hexagonal\Finder\Traits\Finder;
 use Illuminate\Support\Composer;
 use Illuminate\Filesystem\Filesystem;
 use Symfony\Component\Console\Input\InputArgument;
