@@ -13,8 +13,22 @@ namespace Mosaiqo\Hexagonal\Components;
 /**
  * @author Boudy de Geer <boudydegeer@mosaiqo.com>
  */
+/**
+ * Class Job
+ * @package Mosaiqo\Hexagonal\Components
+ */
 class Job extends Component
 {
+	/**
+	 * Job constructor.
+	 * @param $title
+	 * @param $namespace
+	 * @param $file
+	 * @param $path
+	 * @param $relativePath
+	 * @param Domain|null $domain
+	 * @param string $content
+	 */
 	public function __construct($title, $namespace, $file, $path, $relativePath, Domain $domain = null, $content = '')
 	{
 		$className = str_replace(' ', '', $title) . 'Job';
@@ -30,6 +44,9 @@ class Job extends Component
 		]);
 	}
 
+	/**
+	 * @return array
+	 */
 	public function toArray()
 	{
 		$attributes = parent::toArray();

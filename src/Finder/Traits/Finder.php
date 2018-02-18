@@ -18,6 +18,7 @@ use Mosaiqo\Hexagonal\Components\Feature;
 use Mosaiqo\Hexagonal\Components\Service;
 use Mosaiqo\Hexagonal\Components\Domain;
 use Mosaiqo\Hexagonal\Components\Job;
+use Mosaiqo\Hexagonal\Str;
 use Symfony\Component\Finder\Finder as SymfonyFinder;
 
 define('DS', DIRECTORY_SEPARATOR);
@@ -398,6 +399,7 @@ trait Finder
 	 * @param string $domain
 	 *
 	 * @return Collection
+	 * @throws Exception
 	 */
 	public function listJobs($domainName = null)
 	{
@@ -453,6 +455,7 @@ trait Finder
 	 * @param string $domain
 	 *
 	 * @return string
+	 * @throws Exception
 	 */
 	public function findDomainNamespace($domain)
 	{
@@ -465,6 +468,7 @@ trait Finder
 	 * @param string $domain
 	 *
 	 * @return string
+	 * @throws Exception
 	 */
 	public function findDomainJobsNamespace($domain)
 	{
@@ -477,6 +481,7 @@ trait Finder
 	 * @param string $domain
 	 *
 	 * @return string
+	 * @throws Exception
 	 */
 	public function findDomainJobsTestsNamespace($domain)
 	{
@@ -503,8 +508,7 @@ trait Finder
 	 * Find the test path for the given job.
 	 *
 	 * @param string $domain
-	 * @param string $job
-	 *
+	 * @param $jobTest
 	 * @return string
 	 */
 	public function findJobTestPath($domain, $jobTest)
@@ -531,6 +535,7 @@ trait Finder
 	 * @param string $service
 	 *
 	 * @return string
+	 * @throws Exception
 	 */
 	public function findControllerNamespace($service)
 	{
@@ -564,6 +569,7 @@ trait Finder
 	 * @param string $service
 	 *
 	 * @return \Mosaiqo\Hexagonal\Components\Service
+	 * @throws Exception
 	 */
 	public function findService($service)
 	{
@@ -586,6 +592,7 @@ trait Finder
 	 * @param string $domain
 	 *
 	 * @return \Mosaiqo\Hexagonal\Components\Domain
+	 * @throws Exception
 	 */
 	public function findDomain($domain)
 	{
@@ -613,6 +620,7 @@ trait Finder
 	 * @param string $name
 	 *
 	 * @return \Mosaiqo\Hexagonal\Components\Feature
+	 * @throws Exception
 	 */
 	public function findFeature($name)
 	{
@@ -643,7 +651,8 @@ trait Finder
 	 *
 	 * @param string $name
 	 *
-	 * @return \Mosaiqo\Hexagonal\Components\Feature
+	 * @return \Mosaiqo\Hexagonal\Components\Job
+	 * @throws Exception
 	 */
 	public function findJob($name)
 	{
@@ -676,7 +685,7 @@ trait Finder
 	 *
 	 * @param string $serviceName
 	 *
-	 * @return \Illuminate\Support\Collection
+	 * @return array|Collection
 	 *
 	 * @throws \Exception
 	 */
