@@ -1,0 +1,14 @@
+<?php
+
+namespace Mosaiqo\Hexagonal;
+
+use Illuminate\Foundation\Bus\DispatchesJobs;
+use Mosaiqo\Hexagonal\Traits\JobDispatcherTrait;
+use Mosaiqo\Hexagonal\Traits\MarshalTrait;
+
+abstract class Operation
+{
+	use MarshalTrait;
+	use DispatchesJobs;
+	use JobDispatcherTrait;
+}

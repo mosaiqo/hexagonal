@@ -1,0 +1,24 @@
+{
+  "name": "mosaiqo/hexagonal",
+  "description": "Hexagonal Architecture for Laravel Projects",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Boudy de Geer",
+      "email": "boudydegeer@mosaiqo.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Mosaiqo\\Hexagonal\\": "src/"
+    }
+  },
+  "require": {},
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Mosaiqo\\Hexagonal\\LaravelServiceProvider"
+      ]
+    }
+  }
+}
