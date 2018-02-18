@@ -26,7 +26,5 @@ class HexagonalServiceProvider extends ServiceProvider {
 		if (! defined('MOSAIQO_HEXAGONAL_PATH')) {
 			define('MOSAIQO_HEXAGONAL_PATH', realpath(__DIR__.'/../'));
 		}
-
-		Artisan::call('app:name', ['name' => 'Framework']);
 	}
 }
