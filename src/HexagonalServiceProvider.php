@@ -15,6 +15,10 @@ class HexagonalServiceProvider extends ServiceProvider {
 			MOSAIQO_HEXAGONAL_PATH.'/files/config.php' => base_path('config/hexagonal.php'),
 			MOSAIQO_HEXAGONAL_PATH.'/files/hexagonal' => base_path('hexagonal'),
 		]);
+
+		$exitCode = Artisan::call('app:name', [
+			'--name' => 'Framework'
+		]);
 	}
 
 	/**
