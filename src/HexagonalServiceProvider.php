@@ -2,6 +2,7 @@
 namespace Mosaiqo\Hexagonal;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Artisan;
 
 class HexagonalServiceProvider extends ServiceProvider {
 
