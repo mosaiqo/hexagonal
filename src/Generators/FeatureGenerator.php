@@ -70,6 +70,7 @@ class FeatureGenerator extends Generator
 	 *
 	 * @param  string $feature
 	 * @param  string $service
+	 * @throws Exception
 	 */
 	private function generateTestFile($feature, $service)
 	{

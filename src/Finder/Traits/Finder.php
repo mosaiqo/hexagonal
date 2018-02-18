@@ -241,8 +241,7 @@ trait Finder
 	 * Find the test file path for the given feature.
 	 *
 	 * @param string $service
-	 * @param string $feature
-	 *
+	 * @param $test
 	 * @return string
 	 */
 	public function findFeatureTestPath($service, $test)
@@ -258,6 +257,7 @@ trait Finder
 	 * @param string $service
 	 *
 	 * @return string
+	 * @throws Exception
 	 */
 	public function findFeatureNamespace($service)
 	{
@@ -270,6 +270,7 @@ trait Finder
 	 * @param string $service
 	 *
 	 * @return string
+	 * @throws Exception
 	 */
 	public function findFeatureTestNamespace($service)
 	{
@@ -305,8 +306,7 @@ trait Finder
 	 * Find the test file path for the given operation.
 	 *
 	 * @param string $service
-	 * @param string $operation
-	 *
+	 * @param $test
 	 * @return string
 	 */
 	public function findOperationTestPath($service, $test)
@@ -322,6 +322,7 @@ trait Finder
 	 * @param string $service
 	 *
 	 * @return string
+	 * @throws Exception
 	 */
 	public function findOperationNamespace($service)
 	{
@@ -334,6 +335,7 @@ trait Finder
 	 * @param string $service
 	 *
 	 * @return string
+	 * @throws Exception
 	 */
 	public function findOperationTestNamespace($service)
 	{
@@ -366,6 +368,7 @@ trait Finder
 	 * Get the list of domains.
 	 *
 	 * @return \Illuminate\Support\Collection;
+	 * @throws Exception
 	 */
 	public function listDomains()
 	{
@@ -396,8 +399,7 @@ trait Finder
 	 * List the jobs per domain,
 	 * optionally provide a domain name to list its jobs.
 	 *
-	 * @param string $domain
-	 *
+	 * @param null $domainName
 	 * @return Collection
 	 * @throws Exception
 	 */
@@ -790,6 +792,7 @@ trait Finder
 	 * Get the namespace for the Models.
 	 *
 	 * @return string
+	 * @throws Exception
 	 */
 	public function findModelNamespace()
 	{
@@ -800,6 +803,7 @@ trait Finder
 	 * Get the namespace for Policies.
 	 *
 	 * @return mixed
+	 * @throws Exception
 	 */
 	public function findPolicyNamespace()
 	{
@@ -812,6 +816,7 @@ trait Finder
 	 * @param string $service
 	 *
 	 * @return string
+	 * @throws Exception
 	 */
 	public function findRequestsNamespace($service)
 	{
