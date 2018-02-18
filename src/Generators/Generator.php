@@ -24,7 +24,7 @@ class Generator
 	/**
 	 * @var string
 	 */
-	protected $stubDirectory = __DIR__.'/../stubs';
+	protected $stubDirectory = __DIR__.'/../stubs/';
 
 	/**
 	 * @param string $path

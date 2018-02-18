@@ -7,7 +7,7 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace Mosiaqo\Hexagonal\Generators;
+namespace Mosaiqo\Hexagonal\Generators;
 use Exception;
 use Mosaiqo\Hexagonal\Components\Service;
 use Mosaiqo\Hexagonal\Generators\Generator;
@@ -42,6 +42,12 @@ class ServiceGenerator extends Generator
 		'Tests/',
 		'Tests/Features/',
 	];
+
+	/**
+	 * @param $name
+	 * @return bool|Service
+	 * @throws Exception
+	 */
 	public function generate($name)
 	{
 		$name = Str::service($name);
@@ -142,9 +148,9 @@ class ServiceGenerator extends Generator
 	public function addRoutesFiles($name, $slug, $path)
 	{
 		$controllers = 'src/Services/' . $name . '/Http/Controllers';
-		$contentApi = file_get_contents($this->getStubDirectory('/routes/api.stub'));
+		$contentApi = file_get_contents($this->getStubDirectory('routes/api.stub'));
 		$contentApi = str_replace(['{{slug}}', '{{controllers_path}}'], [$slug, $controllers], $contentApi);
-		$contentWeb = file_get_contents($this->getStubDirectory('/routes/web.stub'));
+		$contentWeb = file_get_contents($this->getStubDirectory('routes/web.stub'));
 		$contentWeb = str_replace(['{{slug}}', '{{controllers_path}}'], [$slug, $controllers], $contentWeb);
 		$this->createFile($path . '/routes/api.php', $contentApi);
 		$this->createFile($path . '/routes/web.php', $contentWeb);
@@ -159,7 +165,7 @@ class ServiceGenerator extends Generator
 	{
 		$this->createFile(
 			$path.'/resources/views/welcome.blade.php',
-			file_get_contents($this->getStubDirectory('/views/welcome.blade.stub'))
+			file_get_contents($this->getStubDirectory('views/welcome.blade.stub'))
 		);
 	}
 

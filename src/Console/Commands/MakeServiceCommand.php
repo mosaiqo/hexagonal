@@ -12,7 +12,7 @@ namespace Mosaiqo\Hexagonal\Console\Commands;
 use Mosaiqo\Hexagonal\Finder\Traits\Finder;
 use Mosaiqo\Hexagonal\Console\Traits\Command;
 use Mosaiqo\Hexagonal\Filesystem\Traits\Filesystem;
-use Mosiaqo\Hexagonal\Generators\ServiceGenerator;
+use Mosaiqo\Hexagonal\Generators\ServiceGenerator;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Command\Command as SymfonyCommand;
 
@@ -41,7 +41,7 @@ class MakeServiceCommand extends SymfonyCommand
 	 *
 	 * @var string
 	 */
-	protected $name = 'make:service';
+	protected $name = 'hexagonal:make:service';
 	/**
 	 * The console command description.
 	 *
