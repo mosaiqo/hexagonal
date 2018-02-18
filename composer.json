@@ -17,7 +17,7 @@
   "extra": {
     "laravel": {
       "providers": [
-        "Mosaiqo\\Hexagonal\\LaravelServiceProvider"
+        "Mosaiqo\\Hexagonal\\HexagonalServiceProvider"
       ]
     }
   }
