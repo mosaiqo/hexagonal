@@ -1,6 +1,6 @@
 <?php
 
-namespace Mosaiqo\hexagonal\Console;
+namespace Mosaiqo\Hexagonal\Console;
 
 use Symfony\Component\Console\Helper\Table;
 use Symfony\Component\Console\Input\InputInterface;

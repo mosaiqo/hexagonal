@@ -9,7 +9,7 @@
  */
 namespace Mosaiqo\Hexagonal\Console\Commands;
 
-use Mosaiqo\hexagonal\Console\Command;
+use Mosaiqo\Hexagonal\Console\Command;
 use Mosaiqo\Hexagonal\Finder\Finder;
 use Illuminate\Support\Composer;
 use Illuminate\Filesystem\Filesystem;
