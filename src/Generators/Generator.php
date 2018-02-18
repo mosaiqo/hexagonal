@@ -1,20 +1,22 @@
 <?php
 /*
- * This file is part of the lucid-console project.
+ * This file is part of the mosaiqo/hexagonal project.
  *
- * (c) Vinelab <dev@vinelab.com>
+ * (c) Mosaiqo <mosaiqo@mosaiqo.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+
 namespace Mosaiqo\Hexagonal\Generators;
 
 use Mosaiqo\Hexagonal\Finder\Traits\Finder;
 use Mosaiqo\Hexagonal\Filesystem\Traits\Filesystem;
 
 use Illuminate\Filesystem\Filesystem as IlluminateFilesystem;
+
 /**
- * @author Abed Halawi <abed.halawi@vinelab.com>
+ * @author Boudy de Geer <boudydegeer@mosaiqo.com>
  */
 class Generator
 {
@@ -24,13 +26,14 @@ class Generator
 	/**
 	 * @var string
 	 */
-	protected $stubDirectory = __DIR__.'/../stubs/';
+	protected $stubDirectory = MOSAIQO_HEXAGONAL_PATH . '/stubs/';
 
 	/**
 	 * @param string $path
 	 * @return string
 	 */
-	protected function getStubDirectory ($path = '') {
+	protected function getStubDirectory($path = '')
+	{
 		return $this->stubDirectory . $path;
 	}
 }

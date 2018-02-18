@@ -1,12 +1,13 @@
 <?php
 /*
- * This file is part of the lucid-console project.
+ * This file is part of the mosaiqo/hexagonal project.
  *
- * (c) Vinelab <dev@vinelab.com>
+ * (c) Mosaiqo <mosaiqo@mosaiqo.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+
 namespace Mosaiqo\Hexagonal\Console\Commands;
 
 use Mosaiqo\Hexagonal\Console\Traits\Command;
@@ -18,7 +19,7 @@ use Symfony\Component\Finder\Finder as SymfonyFinder;
 use Symfony\Component\Console\Command\Command as SymfonyCommand;
 
 /**
- * @author Charalampos Raftopoulos <harris@vinelab.com>
+ * @author Boudy de Geer <boudydegeer@mosaiqo.com>
  */
 class ChangeSourceNamespaceCommand extends SymfonyCommand
 {
@@ -47,6 +48,7 @@ class ChangeSourceNamespaceCommand extends SymfonyCommand
 	 * @var \Illuminate\Filesystem\Filesystem
 	 */
 	protected $files;
+
 	/**
 	 * Create a new key generator command.
 	 */
@@ -56,6 +58,7 @@ class ChangeSourceNamespaceCommand extends SymfonyCommand
 		$this->files = new Filesystem();
 		$this->composer = new Composer($this->files);
 	}
+
 	/**
 	 * Execute the console command.
 	 */
@@ -65,12 +68,13 @@ class ChangeSourceNamespaceCommand extends SymfonyCommand
 			$this->setAppDirectoryNamespace();
 			$this->setAppConfigNamespaces();
 			$this->setComposerNamespace();
-			$this->info('Lucid source directory namespace set!');
+			$this->info('Hexagonal source directory namespace set!');
 			$this->composer->dumpAutoloads();
 		} catch (\Exception $e) {
 			$this->error($e->getMessage());
 		}
 	}
+
 	/**
 	 * Set the namespace on the files in the app directory.
 	 */
@@ -84,6 +88,7 @@ class ChangeSourceNamespaceCommand extends SymfonyCommand
 			$this->replaceNamespace($file->getRealPath());
 		}
 	}
+
 	/**
 	 * Replace the App namespace at the given path.
 	 *
@@ -92,45 +97,49 @@ class ChangeSourceNamespaceCommand extends SymfonyCommand
 	protected function replaceNamespace($path)
 	{
 		$search = [
-			'namespace '.$this->findRootNamespace().';',
-			$this->findRootNamespace().'\\',
+			'namespace ' . $this->findRootNamespace() . ';',
+			$this->findRootNamespace() . '\\',
 		];
 		$replace = [
-			'namespace '.$this->argument('name').';',
-			$this->argument('name').'\\',
+			'namespace ' . $this->argument('name') . ';',
+			$this->argument('name') . '\\',
 		];
 		$this->replaceIn($path, $search, $replace);
 	}
+
 	/**
 	 * Set the PSR-4 namespace in the Composer file.
 	 */
 	protected function setComposerNamespace()
 	{
 		$this->replaceIn(
-			$this->getComposerPath(), str_replace('\\', '\\\\', $this->findRootNamespace()).'\\\\', str_replace('\\', '\\\\', $this->argument('name')).'\\\\'
+			$this->getComposerPath(), str_replace('\\', '\\\\', $this->findRootNamespace()) . '\\\\',
+			str_replace('\\', '\\\\', $this->argument('name')) . '\\\\'
 		);
 	}
+
 	/**
 	 * Set the namespace in the appropriate configuration files.
 	 */
 	protected function setAppConfigNamespaces()
 	{
 		$search = [
-			$this->findRootNamespace().'\\Providers',
-			$this->findRootNamespace().'\\Foundation',
-			$this->findRootNamespace().'\\Http\\Controllers\\',
+			$this->findRootNamespace() . '\\Providers',
+			$this->findRootNamespace() . '\\Foundation',
+			$this->findRootNamespace() . '\\Http\\Controllers\\',
 		];
 		$replace = [
-			$this->argument('name').'\\Providers',
-			$this->argument('name').'\\Foundation',
-			$this->argument('name').'\\Http\\Controllers\\',
+			$this->argument('name') . '\\Providers',
+			$this->argument('name') . '\\Foundation',
+			$this->argument('name') . '\\Http\\Controllers\\',
 		];
 		$this->replaceIn($this->getConfigPath('app'), $search, $replace);
 	}
+
 	/**
 	 * Replace the given string in the given file.
 	 *
-	 * @param string       $path
+	 * @param string $path
 	 * @param string|array $search
 	 * @param string|array $replace
 	 */
@@ -140,6 +149,7 @@ class ChangeSourceNamespaceCommand extends SymfonyCommand
 			$this->files->put($path, str_replace($search, $replace, $this->files->get($path)));
 		}
 	}
+
 	/**
 	 * Get the console command arguments.
 	 *

@@ -7,7 +7,9 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+
 namespace Mosaiqo\Hexagonal\Generators;
+
 use Exception;
 use Mosaiqo\Hexagonal\Components\Service;
 use Mosaiqo\Hexagonal\Generators\Generator;
@@ -60,7 +62,7 @@ class ServiceGenerator extends Generator
 		// create service directory
 		$this->createDirectory($path);
 		// create .gitkeep file in it
-		$this->createFile($path.'/.gitkeep');
+		$this->createFile($path . '/.gitkeep');
 		$this->createServiceDirectories($path);
 		$this->addServiceProviders($name, $slug, $path);
 		$this->addRoutesFiles($name, $slug, $path);
@@ -73,6 +75,7 @@ class ServiceGenerator extends Generator
 			$this->relativeFromReal($path)
 		);
 	}
+
 	/**
 	 * Create the default directories at the given service path.
 	 *
@@ -83,10 +86,11 @@ class ServiceGenerator extends Generator
 	public function createServiceDirectories($path)
 	{
 		foreach ($this->directories as $directory) {
-			$this->createDirectory($path.'/'.$directory);
-			$this->createFile($path.'/'.$directory.'/.gitkeep');
+			$this->createDirectory($path . '/' . $directory);
+			$this->createFile($path . '/' . $directory . '/.gitkeep');
 		}
 	}
+
 	/**
 	 * Add the corresponding service provider for the created service.
 	 *
@@ -97,10 +101,11 @@ class ServiceGenerator extends Generator
 	 */
 	public function addServiceProviders($name, $slug, $path)
 	{
-		$namespace = $this->findServiceNamespace($name).'\\Providers';
+		$namespace = $this->findServiceNamespace($name) . '\\Providers';
 		$this->createRegistrationServiceProvider($name, $path, $slug, $namespace);
 		$this->createRouteServiceProvider($name, $path, $slug, $namespace);
 	}
+
 	/**
 	 * Create the service provider that registers this service.
 	 *
@@ -115,8 +120,9 @@ class ServiceGenerator extends Generator
 			[$name, $slug, $namespace],
 			$content
 		);
-		$this->createFile($path.'/Providers/'.$name.'ServiceProvider.php', $content);
+		$this->createFile($path . '/Providers/' . $name . 'ServiceProvider.php', $content);
 	}
+
 	/**
 	 * Create the routes service provider file.
 	 *
@@ -128,7 +134,7 @@ class ServiceGenerator extends Generator
 	public function createRouteServiceProvider($name, $path, $slug, $namespace)
 	{
 		$serviceNamespace = $this->findServiceNamespace($name);
-		$controllers = $serviceNamespace.'\Http\Controllers';
+		$controllers = $serviceNamespace . '\Http\Controllers';
 		$foundation = $this->findFoundationNamespace();
 		$content = file_get_contents($this->getStubDirectory('RouteServiceProvider.stub'));
 		$content = str_replace(
@@ -136,8 +142,9 @@ class ServiceGenerator extends Generator
 			[$name, $namespace, $controllers, $foundation],
 			$content
 		);
-		$this->createFile($path.'/Providers/RouteServiceProvider.php', $content);
+		$this->createFile($path . '/Providers/RouteServiceProvider.php', $content);
 	}
+
 	/**
 	 * Add the routes files.
 	 *
@@ -156,6 +163,7 @@ class ServiceGenerator extends Generator
 		$this->createFile($path . '/routes/web.php', $contentWeb);
 		unset($contentApi, $contentWeb);
 	}
+
 	/**
 	 * Add the welcome view file.
 	 *
@@ -164,7 +172,7 @@ class ServiceGenerator extends Generator
 	public function addWelcomeViewFile($path)
 	{
 		$this->createFile(
-			$path.'/resources/views/welcome.blade.php',
+			$path . '/resources/views/welcome.blade.php',
 			file_get_contents($this->getStubDirectory('views/welcome.blade.stub'))
 		);
 	}

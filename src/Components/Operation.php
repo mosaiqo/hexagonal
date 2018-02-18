@@ -7,22 +7,26 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+
 namespace Mosaiqo\Hexagonal\Components;
 
-use Illuminate\Support\Str;
+
 /**
  * @author Boudy de Geer <boudydegeer@mosaiqo.com>
  */
-class Domain extends Component
+class Operation extends Component
 {
-	public function __construct($name, $namespace, $path, $relativePath)
+	public function __construct($title, $file, $realPath, $relativePath, Service $service = null, $content = '')
 	{
+		$className = str_replace(' ', '', $title) . 'Operation';
 		$this->setAttributes([
-			'name' => $name,
-			'slug' => Str::studly($name),
-			'namespace' => $namespace,
-			'realPath' => $path,
+			'title' => $title,
+			'className' => $className,
+			'service' => $service,
+			'file' => $file,
+			'realPath' => $realPath,
 			'relativePath' => $relativePath,
+			'content' => $content,
 		]);
 	}
 }

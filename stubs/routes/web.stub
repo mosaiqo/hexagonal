@@ -20,4 +20,4 @@ Route::group(['prefix' => '{{slug}}'], function() {
         return view('{{slug}}::welcome');
     });
 
-})
+});

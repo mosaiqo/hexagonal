@@ -1,17 +1,19 @@
 <?php
 /*
- * This file is part of the lucid-console project.
+ * This file is part of the mosaiqo/hexagonal project.
  *
- * (c) Vinelab <dev@vinelab.com>
+ * (c) Mosaiqo <mosaiqo@mosaiqo.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+
 namespace Mosaiqo\Hexagonal\Parser;
 
 use Mosaiqo\Hexagonal\Components\Job;
 use Mosaiqo\Hexagonal\Components\Domain;
 use Mosaiqo\Hexagonal\Components\Feature;
+
 /**
  * @author Boudy de Geer <boudydegeer@mosaiqo.com>
  */
@@ -21,10 +23,11 @@ class Parser
 	const SYNTAX_STRING = 'string';
 	const SYNTAX_KEYWORD = 'keyword';
 	const SYNTAX_INSTANTIATION = 'init';
+
 	/**
 	 * Get the list of jobs for the given feature.
 	 *
-	 * @param  \Lucid\Console\ComponentsFeature $feature
+	 * @param  \Mosaiqo\Hexagonal\Components\Feature $feature
 	 *
 	 * @return array
 	 */
@@ -41,6 +44,7 @@ class Parser
 		}
 		return $jobs;
 	}
+
 	public function parseFunctionBody($contents, $function)
 	{
 		// $pattern = "/function\s$function\([a-zA-Z0-9_\$\s,]+\)?". // match "function handle(...)"
@@ -70,6 +74,7 @@ class Parser
 		preg_match($pattern, $contents, $match);
 		return $match[1];
 	}
+
 	/**
 	 * Parses the job class out of the given line of code.
 	 *
@@ -141,6 +146,7 @@ class Parser
 		);
 		return $job;
 	}
+
 	/**
 	 * Parse the given job class written in the string syntax: 'Some\Domain\Job'
 	 *
@@ -154,12 +160,13 @@ class Parser
 		$slash = strrpos($match, '\\');
 		if ($slash !== false) {
 			$name = str_replace('\\', '', substr($match, $slash));
-			$namespace = '\\'.preg_replace('/^\\\/', '', $match);
+			$namespace = '\\' . preg_replace('/^\\\/', '', $match);
 		}
 		return [$name, $namespace];
 	}
+
 	/**
-	 * Parse the given job class written in the ::class keyword syntax:	SomeJob::class
+	 * Parse the given job class written in the ::class keyword syntax:  SomeJob::class
 	 *
 	 * @param  string $match
 	 * @param  string $contents
@@ -183,12 +190,13 @@ class Parser
 			$name = str_replace(['::class', ');'], '', $match);
 			preg_match("/use\s(.*$name)/", $contents, $namespace);
 			// it is necessary to have a \ at the beginning.
-			$namespace = '\\'.preg_replace('/^\\\/', '', $namespace[1]);
+			$namespace = '\\' . preg_replace('/^\\\/', '', $namespace[1]);
 		}
 		return [$name, $namespace];
 	}
+
 	/**
-	 * Parse the given job class written in the ini syntax:	new SomeJob()
+	 * Parse the given job class written in the ini syntax:  new SomeJob()
 	 *
 	 * @param  string $match
 	 * @param  string $contents
@@ -214,10 +222,11 @@ class Parser
 			// we don't have the full namespace so we will figure it out
 			// from the 'use' statements that we have in the file.
 			preg_match("/use\s(.*$name)/", $contents, $namespace);
-			$namespace = '\\'.preg_replace('/^\\\/', '', $namespace[1]);
+			$namespace = '\\' . preg_replace('/^\\\/', '', $namespace[1]);
 		}
 		return [$name, $namespace];
 	}
+
 	/**
 	 * Get the domain for the given job's namespace.
 	 *
@@ -249,13 +258,14 @@ class Parser
 		// we don't want any quotes
 		return str_replace(['"', "'"], '', $match);
 	}
+
 	/**
 	 * Determine the syntax style of the class name.
 	 * There are three styles possible:
 	 *
-	 * 	- Using the 'TheJob::class' keyword
-	 * 	- Using instantiation: new TheJob(...)
-	 * 	- Using a string with the full namespace: '\Domain\TheJob'
+	 *  - Using the 'TheJob::class' keyword
+	 *  - Using instantiation: new TheJob(...)
+	 *  - Using a string with the full namespace: '\Domain\TheJob'
 	 *
 	 * @param  string $match
 	 *
@@ -265,7 +275,7 @@ class Parser
 	{
 		if (strpos($match, '::class') !== false) {
 			$style = self::SYNTAX_KEYWORD;
-		} elseif(strpos($match, 'new ') !== false) {
+		} elseif (strpos($match, 'new ') !== false) {
 			$style = self::SYNTAX_INSTANTIATION;
 		} else {
 			$style = self::SYNTAX_STRING;

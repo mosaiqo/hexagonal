@@ -1,9 +1,9 @@
 <?php
 
 /*
- * This file is part of the lucid-console project.
+ * This file is part of the mosaiqo/hexagonal project.
  *
- * (c) Vinelab <dev@vinelab.com>
+ * (c) Mosaiqo <mosaiqo@mosaiqo.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -23,7 +23,7 @@ use Symfony\Component\Finder\Finder as SymfonyFinder;
 define('DS', DIRECTORY_SEPARATOR);
 
 /**
- * @author Abed Halawi <abed.halawi@vinelab.com>
+ * @author Boudy de Geer <boudydegeer@mosaiqo.com>
  */
 trait Finder
 {
@@ -122,7 +122,7 @@ trait Finder
 	}
 
 	/**
-	 * Determines whether this is a lucid microservice installation.
+	 * Determines whether this is a hexagonal microservice installation.
 	 *
 	 * @return bool
 	 */
@@ -160,7 +160,7 @@ trait Finder
 	 */
 	public function findFoundationNamespace()
 	{
-		return 'Lucid\Foundation';
+		return 'Mosaiqo\Hexagonal';
 	}
 
 	/**
@@ -169,6 +169,7 @@ trait Finder
 	 * @param string $service
 	 *
 	 * @return string
+	 * @throws Exception
 	 */
 	public function findServiceNamespace($service)
 	{
@@ -562,7 +563,7 @@ trait Finder
 	 *
 	 * @param string $service
 	 *
-	 * @return \Lucid\Console\Components\Service
+	 * @return \Mosaiqo\Hexagonal\Components\Service
 	 */
 	public function findService($service)
 	{
@@ -584,7 +585,7 @@ trait Finder
 	 *
 	 * @param string $domain
 	 *
-	 * @return \Lucid\Console\Components\Domain
+	 * @return \Mosaiqo\Hexagonal\Components\Domain
 	 */
 	public function findDomain($domain)
 	{
@@ -611,7 +612,7 @@ trait Finder
 	 *
 	 * @param string $name
 	 *
-	 * @return \Lucid\Console\Components\Feature
+	 * @return \Mosaiqo\Hexagonal\Components\Feature
 	 */
 	public function findFeature($name)
 	{
@@ -642,7 +643,7 @@ trait Finder
 	 *
 	 * @param string $name
 	 *
-	 * @return \Lucid\Console\Components\Feature
+	 * @return \Mosaiqo\Hexagonal\Components\Feature
 	 */
 	public function findJob($name)
 	{

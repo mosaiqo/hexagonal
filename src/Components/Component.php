@@ -1,8 +1,8 @@
 <?php
 /*
- * This file is part of the lucid-console project.
+ * This file is part of the mosaiqo/hexagonal project.
  *
- * (c) Vinelab <dev@vinelab.com>
+ * (c) Mosaiqo <mosaiqo@mosaiqo.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.

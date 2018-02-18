@@ -1,12 +1,13 @@
 <?php
 /*
- * This file is part of the lucid-console project.
+ * This file is part of the mosaiqo/hexagonal project.
  *
- * (c) Vinelab <dev@vinelab.com>
+ * (c) Mosaiqo <mosaiqo@mosaiqo.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+
 namespace Mosaiqo\Hexagonal\Console\Commands;
 
 use Mosaiqo\Hexagonal\Finder\Traits\Finder;
@@ -17,7 +18,7 @@ use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Command\Command as SymfonyCommand;
 
 /**
- * @author Abed Halawi <abed.halawi@vinelab.com>
+ * @author Boudy de Geer <boudydegeer@mosaiqo.com>
  */
 class MakeServiceCommand extends SymfonyCommand
 {
@@ -56,7 +57,7 @@ class MakeServiceCommand extends SymfonyCommand
 	 */
 	protected function getStub()
 	{
-		return __DIR__.'/../Generators/stubs/service.stub';
+		return __DIR__ . '/../Generators/stubs/service.stub';
 	}
 
 	/**
@@ -70,23 +71,24 @@ class MakeServiceCommand extends SymfonyCommand
 			$name = $this->argument('name');
 			$generator = new ServiceGenerator();
 			$service = $generator->generate($name);
-			$this->info('Service '.$service->name.' created successfully.'."\n");
+			$this->info('Service ' . $service->name . ' created successfully.' . "\n");
 			$rootNamespace = $this->findRootNamespace();
 			$serviceNamespace = $this->findServiceNamespace($service->name);
-			$serviceProvider = $serviceNamespace.'\\Providers\\'.$service->name.'ServiceProvider';
+			$serviceProvider = $serviceNamespace . '\\Providers\\' . $service->name . 'ServiceProvider';
 
-			$this->info('Activate it by registering '.
-				'<comment>'.$serviceProvider.'</comment> '.
-				"\n".
-				'in <comment>'.$rootNamespace.'\Foundation\Providers\ServiceProvider@register</comment> '.
-				'with the following:'.
+			$this->info('Activate it by registering ' .
+				'<comment>' . $serviceProvider . '</comment> ' .
+				"\n" .
+				'in <comment>' . $rootNamespace . '\Foundation\Providers\ServiceProvider@register</comment> ' .
+				'with the following:' .
 				"\n"
 			);
-			$this->info('<comment>$this->app->register(\''.$serviceProvider.'\');</comment>'."\n");
+			$this->info('<comment>$this->app->register(\'' . $serviceProvider . '\');</comment>' . "\n");
 		} catch (\Exception $e) {
-			$this->error($e->getMessage()."\n".$e->getFile().' at '.$e->getLine());
+			$this->error($e->getMessage() . "\n" . $e->getFile() . ' at ' . $e->getLine());
 		}
 	}
+
 	public function getArguments()
 	{
 		return [

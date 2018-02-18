@@ -1,0 +1,13 @@
+<?php
+namespace {{namespace}};
+
+use {{foundation_namespace}}\Feature;
+use Illuminate\Http\Request;
+{{use_jobs}}
+class {{feature}} extends Feature
+{
+    public function handle(Request $request)
+    {
+{{run_jobs}}
+    }
+}
