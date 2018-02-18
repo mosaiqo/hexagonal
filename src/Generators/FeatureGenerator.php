@@ -19,6 +19,13 @@ use Mosaiqo\Hexagonal\Components\Feature;
  */
 class FeatureGenerator extends Generator
 {
+	/**
+	 * @param $feature
+	 * @param $service
+	 * @param array $jobs
+	 * @return bool|Feature
+	 * @throws Exception
+	 */
 	public function generate($feature, $service, array $jobs = [])
 	{
 		$feature = Str::feature($feature);
@@ -96,6 +103,6 @@ class FeatureGenerator extends Generator
 	 */
 	private function getTestStub()
 	{
-		return $this->getStubDirectory('FeatureTest.stub');
+		return $this->getStubDirectory('Tests/FeatureTest.stub');
 	}
 }
