@@ -22,6 +22,9 @@ class HexagonalServiceProvider extends ServiceProvider {
 		$this->commands([
 			\Mosaiqo\Hexagonal\Console\Commands\ChangeSourceNamespaceCommand::class,
 			\Mosaiqo\Hexagonal\Console\Commands\MakeServiceCommand::class,
+			\Mosaiqo\Hexagonal\Console\Commands\MakeFeatureCommand::class,
+			\Mosaiqo\Hexagonal\Console\Commands\MakeControllerCommand::class,
+			\Mosaiqo\Hexagonal\Console\Commands\ListFeaturesCommand::class,
 		]);
 	}
 
