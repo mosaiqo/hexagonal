@@ -13,9 +13,7 @@ namespace Mosaiqo\Hexagonal\Generators;
 use Exception;
 use Mosaiqo\Hexagonal\Str;
 
-/**
- * @author Boudy de Geer <boudydegeer@mosaiqo.com>
- */
+
 class ControllerGenerator extends Generator
 {
 	/**

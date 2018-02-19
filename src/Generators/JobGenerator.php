@@ -14,9 +14,7 @@ use Exception;
 use Mosaiqo\Hexagonal\Str;
 use Mosaiqo\Hexagonal\Components\Job;
 
-/**
- * @author Boudy de Geer <boudydegeer@mosaiqo.com>
- */
+
 class JobGenerator extends Generator
 {
 	public function generate($job, $domain, $isQueueable = false)

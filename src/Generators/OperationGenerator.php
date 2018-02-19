@@ -13,9 +13,7 @@ use Exception;
 use Mosaiqo\Hexagonal\Str;
 use Mosaiqo\Hexagonal\Components\Operation;
 
-/**
- * @author Boudy de Geer <boudydegeer@mosaiqo.com>
- */
+
 class OperationGenerator extends Generator
 {
 	public function generate($operation, $service, $isQueueable = false, array $jobs = [])

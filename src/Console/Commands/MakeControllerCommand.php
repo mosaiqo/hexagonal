@@ -1,12 +1,12 @@
 <?php
-/*
- * This file is part of the mosaiqo/hexagonal project.
- *
- * (c) Mosaiqo <mosaiqo@mosaiqo.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
+/******************************************************************************
+ *                                                                            *
+ * This file is part of the mosaiqo/hexagonal project.                        *
+ * Copyright (c) 2018 Boudy de Geer <boudydegeer@mosaiqo.com>                 *
+ * For the full copyright and license information, please view the LICENSE    *
+ * file that was distributed with this source code.                           *
+ *                                                                            *
+ ******************************************************************************/
 
 namespace Mosaiqo\Hexagonal\Console\Commands;
 
@@ -18,7 +18,10 @@ use Mosaiqo\Hexagonal\Generators\ControllerGenerator;
 use Symfony\Component\Console\Input\InputArgument;
 use Mosaiqo\Hexagonal\Console\Command as BaseCommand;
 
+
 /**
+ * Class MakeControllerCommand
+ * @package Mosaiqo\Hexagonal\Console\Commands
  * @author Boudy de Geer <boudydegeer@mosaiqo.com>
  */
 class MakeControllerCommand extends BaseCommand

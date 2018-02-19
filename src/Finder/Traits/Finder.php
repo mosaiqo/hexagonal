@@ -23,9 +23,7 @@ use Symfony\Component\Finder\Finder as SymfonyFinder;
 
 define('DS', DIRECTORY_SEPARATOR);
 
-/**
- * @author Boudy de Geer <boudydegeer@mosaiqo.com>
- */
+
 trait Finder
 {
 	/**

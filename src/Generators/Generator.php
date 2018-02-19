@@ -15,9 +15,7 @@ use Mosaiqo\Hexagonal\Filesystem\Traits\Filesystem;
 
 use Illuminate\Filesystem\Filesystem as IlluminateFilesystem;
 
-/**
- * @author Boudy de Geer <boudydegeer@mosaiqo.com>
- */
+
 class Generator
 {
 	use Finder;

@@ -10,9 +10,7 @@
 
 namespace Mosaiqo\Hexagonal;
 
-/**
- * @author Boudy de Geer <boudydegeer@mosaiqo.com>
- */
+
 class Str
 {
 	/**

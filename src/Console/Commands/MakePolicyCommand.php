@@ -1,25 +1,26 @@
 <?php
-/*
- * This file is part of the mosaiqo/hexagonal project.
- *
- * (c) Mosaiqo <mosaiqo@mosaiqo.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
+/******************************************************************************
+ * Copyright (c) 2018.                                                        *
+ ******************************************************************************/
 
 namespace Mosaiqo\Hexagonal\Console\Commands;
 
-use Exception;
-use Mosaiqo\Hexagonal\Generators\ModelGenerator;
 use Mosaiqo\Hexagonal\Finder\Traits\Finder;
 use Mosaiqo\Hexagonal\Console\Traits\Command;
 use Mosaiqo\Hexagonal\Filesystem\Traits\Filesystem;
+use Exception;
+use Mosaiqo\Hexagonal\Generators\PolicyGenerator;
 use Symfony\Component\Console\Input\InputArgument;
 use Mosaiqo\Hexagonal\Console\Command as BaseCommand;
 
-
-class MakeModelCommand extends BaseCommand
+/**
+ * Class MakePolicyCommand
+ *
+ * @author Bernat Jufré <info@behind.design>
+ *
+ * @package Mosaiqo\Hexagonal\Console\Commands
+ */
+class MakePolicyCommand extends BaseCommand
 {
 	use Finder;
 	use Command;
@@ -29,18 +30,18 @@ class MakeModelCommand extends BaseCommand
 	 *
 	 * @var string
 	 */
-	protected $name = 'hexagonal:make:model';
+	protected $name = 'make:policy';
 	/**
 	 * The console command description.
 	 *
 	 * @var string
 	 */
-	protected $description = 'Create a new Eloquent Model.';
+	protected $description = 'Create a Policy.';
 	/**
 	 * The type of class being generated
 	 * @var string
 	 */
-	protected $type = 'Model';
+	protected $type = 'Policy';
 
 	/**
 	 * Execute the console command.
@@ -49,14 +50,14 @@ class MakeModelCommand extends BaseCommand
 	 */
 	public function handle()
 	{
-		$generator = new ModelGenerator();
-		$name = $this->argument('model');
+		$generator = new PolicyGenerator();
+		$name = $this->argument('policy');
 		try {
-			$model = $generator->generate($name);
-			$this->info('Model class created successfully.' .
+			$policy = $generator->generate($name);
+			$this->info('Policy class created successfully.' .
 				"\n" .
 				"\n" .
-				'Find it at <comment>' . $model->relativePath . '</comment>' . "\n"
+				'Find it at <comment>' . $policy->relativePath . '</comment>' . "\n"
 			);
 		} catch (Exception $e) {
 			$this->error($e->getMessage());
@@ -71,7 +72,7 @@ class MakeModelCommand extends BaseCommand
 	public function getArguments()
 	{
 		return [
-			['model', InputArgument::REQUIRED, 'The Model\'s name.']
+			['policy', InputArgument::REQUIRED, 'The Policy\'s name.']
 		];
 	}
 
@@ -82,6 +83,6 @@ class MakeModelCommand extends BaseCommand
 	 */
 	public function getStub()
 	{
-		return $this->getStubDirectory('Model.stub');
+		return $this->getStubDirectory('Policy.stub');
 	}
 }

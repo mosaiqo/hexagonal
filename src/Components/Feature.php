@@ -10,9 +10,7 @@
 
 namespace Mosaiqo\Hexagonal\Components;
 
-/**
- * @author Boudy de Geer <boudydegeer@mosaiqo.com>
- */
+
 class Feature extends Component
 {
 	public function __construct($title, $file, $realPath, $relativePath, Service $service = null, $content = '')

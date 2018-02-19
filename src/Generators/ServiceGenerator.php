@@ -15,9 +15,7 @@ use Mosaiqo\Hexagonal\Components\Service;
 use Mosaiqo\Hexagonal\Generators\Generator;
 use Mosaiqo\Hexagonal\Str;
 
-/**
- * @author Boudy de Geer <boudydegeer@mosaiqo.com>
- */
+
 class ServiceGenerator extends Generator
 {
 	/**

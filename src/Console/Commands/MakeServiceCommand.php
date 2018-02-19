@@ -17,9 +17,7 @@ use Mosaiqo\Hexagonal\Generators\ServiceGenerator;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Command\Command as SymfonyCommand;
 
-/**
- * @author Boudy de Geer <boudydegeer@mosaiqo.com>
- */
+
 class MakeServiceCommand extends SymfonyCommand
 {
 	use Finder;

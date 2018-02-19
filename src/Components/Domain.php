@@ -10,9 +10,7 @@
 namespace Mosaiqo\Hexagonal\Components;
 
 use Illuminate\Support\Str;
-/**
- * @author Boudy de Geer <boudydegeer@mosaiqo.com>
- */
+
 class Domain extends Component
 {
 	public function __construct($name, $namespace, $path, $relativePath)

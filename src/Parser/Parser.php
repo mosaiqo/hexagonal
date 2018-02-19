@@ -14,9 +14,7 @@ use Mosaiqo\Hexagonal\Components\Job;
 use Mosaiqo\Hexagonal\Components\Domain;
 use Mosaiqo\Hexagonal\Components\Feature;
 
-/**
- * @author Boudy de Geer <boudydegeer@mosaiqo.com>
- */
+
 class Parser
 {
 	use Finder;

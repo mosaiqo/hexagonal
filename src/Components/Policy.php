@@ -11,9 +11,7 @@
 namespace Mosaiqo\Hexagonal\Components;
 
 
-/**
- * @author Boudy de Geer <boudydegeer@mosaiqo.com>
- */
+
 class Policy extends Component
 {
 	public function __construct($title, $namespace, $file, $path, $relativePath, $content)

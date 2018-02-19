@@ -11,9 +11,7 @@ namespace Mosaiqo\Hexagonal\Components;
 
 use Mosaiqo\Hexagonal\Components\Component;
 
-/**
- * @author Boudy de Geer <boudydegeer@mosaiqo.com>
- */
+
 class Service extends Component
 {
 	public function __construct($name, $realPath, $relativePath)

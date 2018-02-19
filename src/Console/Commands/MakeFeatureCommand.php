@@ -18,9 +18,7 @@ use Mosaiqo\Hexagonal\Generators\FeatureGenerator;
 use Symfony\Component\Console\Input\InputArgument;
 use Mosaiqo\Hexagonal\Console\Command as BaseCommand;
 
-/**
- * @author Boudy de Geer <boudydegeer@mosaiqo.com>
- */
+
 class MakeFeatureCommand extends BaseCommand
 {
 	use Finder;

@@ -14,9 +14,7 @@ use Exception;
 use Mosaiqo\Hexagonal\Str;
 use Mosaiqo\Hexagonal\Components\Feature;
 
-/**
- * @author Boudy de Geer <boudydegeer@mosaiqo.com>
- */
+
 class FeatureGenerator extends Generator
 {
 	/**

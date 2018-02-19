@@ -19,9 +19,7 @@ use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
 use Mosaiqo\Hexagonal\Console\Command as BaseCommand;
 
-/**
- * @author Boudy de Geer <boudydegeer@mosaiqo.com>
- */
+
 class MakeJobCommand extends BaseCommand
 {
 	use Finder;

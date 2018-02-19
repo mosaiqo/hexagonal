@@ -14,9 +14,7 @@ use Mosaiqo\Hexagonal\Console\Traits\Command;
 use Mosaiqo\Hexagonal\Finder\Traits\Finder;
 use Mosaiqo\Hexagonal\Console\Command as BaseCommand;
 
-/**
- * @author Boudy de Geer <boudydegeer@mosaiqo.com>
- */
+
 class ListServicesCommand extends BaseCommand
 {
 	use Finder;

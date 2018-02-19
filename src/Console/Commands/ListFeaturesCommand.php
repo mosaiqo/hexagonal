@@ -14,9 +14,7 @@ use Mosaiqo\Hexagonal\Finder\Traits\Finder;
 use Mosaiqo\Hexagonal\Console\Traits\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Mosaiqo\Hexagonal\Console\Command as BaseCommand;
-/**
- * @author Boudy de Geer <boudydegeer@mosaiqo.com>
- */
+
 class ListFeaturesCommand extends BaseCommand
 {
 	use Finder;

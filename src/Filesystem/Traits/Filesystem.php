@@ -12,9 +12,7 @@ namespace Mosaiqo\Hexagonal\Filesystem\Traits;
 
 use Symfony\Component\Filesystem\Filesystem as SymfonyFilesystem;
 
-/**
- * @author Boudy de Geer <boudydegeer@mosaiqo.com>
- */
+
 trait Filesystem
 {
 	/**

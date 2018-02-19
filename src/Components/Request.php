@@ -11,9 +11,7 @@
 namespace Mosaiqo\Hexagonal\Components;
 
 
-/**
- * @author Boudy de Geer <boudydegeer@mosaiqo.com>
- */
+
 class Request extends Component
 {
 	public function __construct($title, $service, $namespace, $file, $path, $relativePath, $content)

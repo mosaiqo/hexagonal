@@ -10,9 +10,7 @@
 
 namespace Mosaiqo\Hexagonal\Components;
 
-/**
- * @author Boudy de Geer <boudydegeer@mosaiqo.com>
- */
+
 /**
  * Class Job
  * @package Mosaiqo\Hexagonal\Components
