@@ -12,7 +12,7 @@ namespace Mosaiqo\Hexagonal\Console\Commands;
 
 use Mosaiqo\Hexagonal\Console\Traits\Command;
 use Mosaiqo\Hexagonal\Finder\Traits\Finder;
-use Mosaiqo\Hexagonal\Console\Command as BaseCommand;
+use MosaiqoHexagonalConsoleBaseCommand;
 
 
 class ListServicesCommand extends BaseCommand

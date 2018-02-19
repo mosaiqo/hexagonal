@@ -13,7 +13,7 @@ namespace Mosaiqo\Hexagonal\Console\Commands;
 use Mosaiqo\Hexagonal\Finder\Traits\Finder;
 use Mosaiqo\Hexagonal\Console\Traits\Command;
 use Symfony\Component\Console\Input\InputArgument;
-use Mosaiqo\Hexagonal\Console\Command as BaseCommand;
+use Mosaiqo\Hexagonal\Console\BaseCommand;
 
 class ListFeaturesCommand extends BaseCommand
 {

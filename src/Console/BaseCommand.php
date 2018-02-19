@@ -2,9 +2,9 @@
 
 namespace Mosaiqo\Hexagonal\Console;
 
-use Symfony\Component\Console\Command\Command as SymfonyCommand;
+use Illuminate\Console\Command;
 
-class Command extends SymfonyCommand {
+class BaseCommand extends Command {
 	/**
 	 * @var string
 	 */

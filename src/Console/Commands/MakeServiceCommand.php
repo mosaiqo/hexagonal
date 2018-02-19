@@ -15,10 +15,10 @@ use Mosaiqo\Hexagonal\Console\Traits\Command;
 use Mosaiqo\Hexagonal\Filesystem\Traits\Filesystem;
 use Mosaiqo\Hexagonal\Generators\ServiceGenerator;
 use Symfony\Component\Console\Input\InputArgument;
-use Symfony\Component\Console\Command\Command as SymfonyCommand;
+use Mosaiqo\Hexagonal\Console\BaseCommand;
 
 
-class MakeServiceCommand extends SymfonyCommand
+class MakeServiceCommand extends BaseCommand
 {
 	use Finder;
 	use Command;

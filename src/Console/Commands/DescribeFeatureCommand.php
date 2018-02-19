@@ -11,7 +11,8 @@
 namespace Mosaiqo\Hexagonal\Console\Commands;
 
 use Mosaiqo\Hexagonal\Finder\Traits\Finder;
-use Mosaiqo\Hexagonal\Console\Command as BaseCommand;
+use Mosaiqo\Hexagonal\Parser\Parser;
+use Mosaiqo\Hexagonal\Console\BaseCommand;
 
 use Symfony\Component\Console\Exception\InvalidArgumentException;
 use Symfony\Component\Console\Input\InputArgument;
@@ -19,12 +20,14 @@ use Symfony\Component\Console\Input\InputArgument;
 class DescribeFeatureCommand extends BaseCommand
 {
 	use Finder;
+
 	/**
 	 * The console command name.
 	 *
 	 * @var string
 	 */
 	protected $name = 'hexagonal:describe:feature';
+
 	/**
 	 * The console command description.
 	 *

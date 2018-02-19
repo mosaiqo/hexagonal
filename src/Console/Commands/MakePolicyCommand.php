@@ -11,7 +11,7 @@ use Mosaiqo\Hexagonal\Filesystem\Traits\Filesystem;
 use Exception;
 use Mosaiqo\Hexagonal\Generators\PolicyGenerator;
 use Symfony\Component\Console\Input\InputArgument;
-use Mosaiqo\Hexagonal\Console\Command as BaseCommand;
+use MosaiqoHexagonalConsoleBaseCommand;
 
 /**
  * Class MakePolicyCommand
@@ -30,7 +30,7 @@ class MakePolicyCommand extends BaseCommand
 	 *
 	 * @var string
 	 */
-	protected $name = 'make:policy';
+	protected $name = 'hexagonal:make:policy';
 	/**
 	 * The console command description.
 	 *

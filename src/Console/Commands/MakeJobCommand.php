@@ -17,7 +17,7 @@ use Mosaiqo\Hexagonal\Generators\JobGenerator;
 use Mosaiqo\Hexagonal\Str;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
-use Mosaiqo\Hexagonal\Console\Command as BaseCommand;
+use MosaiqoHexagonalConsoleBaseCommand;
 
 
 class MakeJobCommand extends BaseCommand

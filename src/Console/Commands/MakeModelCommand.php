@@ -16,7 +16,7 @@ use Mosaiqo\Hexagonal\Finder\Traits\Finder;
 use Mosaiqo\Hexagonal\Console\Traits\Command;
 use Mosaiqo\Hexagonal\Filesystem\Traits\Filesystem;
 use Symfony\Component\Console\Input\InputArgument;
-use Mosaiqo\Hexagonal\Console\Command as BaseCommand;
+use MosaiqoHexagonalConsoleBaseCommand;
 
 
 class MakeModelCommand extends BaseCommand

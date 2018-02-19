@@ -16,7 +16,7 @@ use Mosaiqo\Hexagonal\Filesystem\Traits\Filesystem;
 use Mosaiqo\Hexagonal\Finder\Traits\Finder;
 use Mosaiqo\Hexagonal\Generators\RequestGenerator;
 use Symfony\Component\Console\Input\InputArgument;
-use Mosaiqo\Hexagonal\Console\Command as BaseCommand;
+use MosaiqoHexagonalConsoleBaseCommand;
 
 /**
  * Class RequestMakeCommand

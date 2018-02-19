@@ -16,7 +16,7 @@ use Mosaiqo\Hexagonal\Console\Traits\Command;
 use Mosaiqo\Hexagonal\Filesystem\Traits\Filesystem;
 use Mosaiqo\Hexagonal\Generators\FeatureGenerator;
 use Symfony\Component\Console\Input\InputArgument;
-use Mosaiqo\Hexagonal\Console\Command as BaseCommand;
+use MosaiqoHexagonalConsoleBaseCommand;
 
 
 class MakeFeatureCommand extends BaseCommand

@@ -16,7 +16,7 @@ use Illuminate\Support\Composer;
 use Illuminate\Filesystem\Filesystem;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Finder\Finder as SymfonyFinder;
-use Symfony\Component\Console\Command\Command as SymfonyCommand;
+use Mosaiqo\Hexagonal\Console\BaseCommand;
 
 
 /**
@@ -24,7 +24,7 @@ use Symfony\Component\Console\Command\Command as SymfonyCommand;
  * @package Mosaiqo\Hexagonal\Console\Commands
  * @author Boudy de Geer <boudydegeer@mosaiqo.com>
  */
-class ChangeSourceNamespaceCommand extends SymfonyCommand
+class ChangeSourceNamespaceCommand extends BaseCommand
 {
 	use Finder, Command;
 	/**

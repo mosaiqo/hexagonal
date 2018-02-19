@@ -16,7 +16,7 @@ use Mosaiqo\Hexagonal\Filesystem\Traits\Filesystem;
 use Symfony\Component\Console\Input\InputOption;
 use Mosaiqo\Hexagonal\Generators\ControllerGenerator;
 use Symfony\Component\Console\Input\InputArgument;
-use Mosaiqo\Hexagonal\Console\Command as BaseCommand;
+use MosaiqoHexagonalConsoleBaseCommand;
 
 
 /**
