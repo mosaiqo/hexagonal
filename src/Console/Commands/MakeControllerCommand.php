@@ -10,13 +10,13 @@
 
 namespace Mosaiqo\Hexagonal\Console\Commands;
 
-use Mosaiqo\Hexagonal\Finder\Traits\Finder;
-use Mosaiqo\Hexagonal\Console\Traits\Command;
-use Mosaiqo\Hexagonal\Filesystem\Traits\Filesystem;
-use Symfony\Component\Console\Input\InputOption;
+use Mosaiqo\Hexagonal\Console\BaseCommand;
+use Mosaiqo\Hexagonal\Console\Traits\CommandTrait;
+use Mosaiqo\Hexagonal\Filesystem\Traits\FilesystemTrait;
+use Mosaiqo\Hexagonal\Finder\Traits\FinderTrait;
 use Mosaiqo\Hexagonal\Generators\ControllerGenerator;
 use Symfony\Component\Console\Input\InputArgument;
-use MosaiqoHexagonalConsoleBaseCommand;
+use Symfony\Component\Console\Input\InputOption;
 
 
 /**
@@ -26,9 +26,7 @@ use MosaiqoHexagonalConsoleBaseCommand;
  */
 class MakeControllerCommand extends BaseCommand
 {
-	use Finder;
-	use Command;
-	use Filesystem;
+	use FinderTrait, CommandTrait, FilesystemTrait;
 	/**
 	 * The console command name.
 	 *

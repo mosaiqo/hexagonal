@@ -10,7 +10,7 @@
 
 namespace Mosaiqo\Hexagonal\Console\Commands;
 
-use Mosaiqo\Hexagonal\Finder\Traits\Finder;
+use Mosaiqo\Hexagonal\Finder\Traits\FinderTrait;
 use Mosaiqo\Hexagonal\Parser\Parser;
 use Mosaiqo\Hexagonal\Console\BaseCommand;
 
@@ -19,7 +19,7 @@ use Symfony\Component\Console\Input\InputArgument;
 
 class DescribeFeatureCommand extends BaseCommand
 {
-	use Finder;
+	use FinderTrait;
 
 	/**
 	 * The console command name.

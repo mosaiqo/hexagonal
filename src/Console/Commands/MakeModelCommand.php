@@ -1,29 +1,33 @@
 <?php
-/*
- * This file is part of the mosaiqo/hexagonal project.
- *
- * (c) Mosaiqo <mosaiqo@mosaiqo.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
+/******************************************************************************
+ *                                                                            *
+ * This file is part of the mosaiqo/hexagonal project.                        *
+ * Copyright (c) 2018 Boudy de Geer <boudydegeer@mosaiqo.com>                 *
+ * For the full copyright and license information, please view the LICENSE    *
+ * file that was distributed with this source code.                           *
+ *                                                                            *
+ ******************************************************************************/
 
 namespace Mosaiqo\Hexagonal\Console\Commands;
 
 use Exception;
 use Mosaiqo\Hexagonal\Generators\ModelGenerator;
-use Mosaiqo\Hexagonal\Finder\Traits\Finder;
-use Mosaiqo\Hexagonal\Console\Traits\Command;
-use Mosaiqo\Hexagonal\Filesystem\Traits\Filesystem;
+use Mosaiqo\Hexagonal\Finder\Traits\FinderTrait;
+use Mosaiqo\Hexagonal\Console\Traits\CommandTrait;
+use Mosaiqo\Hexagonal\Filesystem\Traits\FilesystemTrait;
 use Symfony\Component\Console\Input\InputArgument;
-use MosaiqoHexagonalConsoleBaseCommand;
+use Mosaiqo\Hexagonal\Console\BaseCommand;
 
 
+/**
+ * Class MakeModelCommand
+ * @package Mosaiqo\Hexagonal\Console\Commands
+ * @author Boudy de Geer <boudydegeer@mosaiqo.com>
+ */
 class MakeModelCommand extends BaseCommand
 {
-	use Finder;
-	use Command;
-	use Filesystem;
+	use FinderTrait, CommandTrait, FilesystemTrait;
+
 	/**
 	 * The console command name.
 	 *

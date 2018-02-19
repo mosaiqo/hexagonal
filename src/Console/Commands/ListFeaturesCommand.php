@@ -10,15 +10,14 @@
 
 namespace Mosaiqo\Hexagonal\Console\Commands;
 
-use Mosaiqo\Hexagonal\Finder\Traits\Finder;
-use Mosaiqo\Hexagonal\Console\Traits\Command;
+use Mosaiqo\Hexagonal\Finder\Traits\FinderTrait;
+use Mosaiqo\Hexagonal\Console\Traits\CommandTrait;
 use Symfony\Component\Console\Input\InputArgument;
 use Mosaiqo\Hexagonal\Console\BaseCommand;
 
 class ListFeaturesCommand extends BaseCommand
 {
-	use Finder;
-	use Command;
+	use FinderTrait, CommandTrait;
 	/**
 	 * The console command name.
 	 *

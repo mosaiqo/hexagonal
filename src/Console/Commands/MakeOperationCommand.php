@@ -10,10 +10,10 @@
 
 namespace Mosaiqo\Hexagonal\Console\Commands;
 
-use MosaiqoHexagonalConsoleBaseCommand;
-use Mosaiqo\Hexagonal\Console\Traits\Command;
-use Mosaiqo\Hexagonal\Filesystem\Traits\Filesystem;
-use Mosaiqo\Hexagonal\Finder\Traits\Finder;
+use Mosaiqo\Hexagonal\Console\BaseCommand;
+use Mosaiqo\Hexagonal\Console\Traits\CommandTrait;
+use Mosaiqo\Hexagonal\Filesystem\Traits\FilesystemTrait;
+use Mosaiqo\Hexagonal\Finder\Traits\FinderTrait;
 use Mosaiqo\Hexagonal\Generators\OperationGenerator;
 use Mosaiqo\Hexagonal\Str;
 use Symfony\Component\Console\Input\InputArgument;
@@ -27,9 +27,7 @@ use Symfony\Component\Console\Input\InputOption;
  */
 class MakeOperationCommand extends BaseCommand
 {
-	use Finder;
-	use Command;
-	use Filesystem;
+	use FinderTrait, CommandTrait, FilesystemTrait;
 
 	/**
 	 * The console command name.

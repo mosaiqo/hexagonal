@@ -11,12 +11,12 @@
 namespace Mosaiqo\Hexagonal\Console\Commands;
 
 use Exception;
-use Mosaiqo\Hexagonal\Console\Traits\Command;
-use Mosaiqo\Hexagonal\Filesystem\Traits\Filesystem;
-use Mosaiqo\Hexagonal\Finder\Traits\Finder;
+use Mosaiqo\Hexagonal\Console\Traits\CommandTrait;
+use Mosaiqo\Hexagonal\Filesystem\Traits\FilesystemTrait;
+use Mosaiqo\Hexagonal\Finder\Traits\FinderTrait;
 use Mosaiqo\Hexagonal\Generators\RequestGenerator;
 use Symfony\Component\Console\Input\InputArgument;
-use MosaiqoHexagonalConsoleBaseCommand;
+use Mosaiqo\Hexagonal\Console\BaseCommand;
 
 /**
  * Class RequestMakeCommand
@@ -25,9 +25,8 @@ use MosaiqoHexagonalConsoleBaseCommand;
  */
 class MakeRequestCommand extends BaseCommand
 {
-	use Finder;
-	use Command;
-	use Filesystem;
+	use FinderTrait, CommandTrait, FilesystemTrait;
+
 	/**
 	 * The console command name.
 	 *

@@ -13,7 +13,7 @@ namespace Mosaiqo\Hexagonal\Filesystem\Traits;
 use Symfony\Component\Filesystem\Filesystem as SymfonyFilesystem;
 
 
-trait Filesystem
+trait FilesystemTrait
 {
 	/**
 	 * Determine if a file or directory exists.

@@ -10,8 +10,8 @@
 
 namespace Mosaiqo\Hexagonal\Console\Commands;
 
-use Mosaiqo\Hexagonal\Console\Traits\Command;
-use Mosaiqo\Hexagonal\Finder\Traits\Finder;
+use Mosaiqo\Hexagonal\Console\Traits\CommandTrait;
+use Mosaiqo\Hexagonal\Finder\Traits\FinderTrait;
 use Illuminate\Support\Composer;
 use Illuminate\Filesystem\Filesystem;
 use Symfony\Component\Console\Input\InputArgument;
@@ -26,7 +26,7 @@ use Mosaiqo\Hexagonal\Console\BaseCommand;
  */
 class ChangeSourceNamespaceCommand extends BaseCommand
 {
-	use Finder, Command;
+	use FinderTrait, CommandTrait;
 	/**
 	 * The console command name.
 	 *

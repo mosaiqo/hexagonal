@@ -24,7 +24,7 @@ use Symfony\Component\Finder\Finder as SymfonyFinder;
 define('DS', DIRECTORY_SEPARATOR);
 
 
-trait Finder
+trait FinderTrait
 {
 	/**
 	 * The name of the source directory.

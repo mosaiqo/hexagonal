@@ -10,15 +10,14 @@
 
 namespace Mosaiqo\Hexagonal\Console\Commands;
 
-use Mosaiqo\Hexagonal\Console\Traits\Command;
-use Mosaiqo\Hexagonal\Finder\Traits\Finder;
-use MosaiqoHexagonalConsoleBaseCommand;
+use Mosaiqo\Hexagonal\Console\Traits\CommandTrait;
+use Mosaiqo\Hexagonal\Finder\Traits\FinderTrait;
+use Mosaiqo\Hexagonal\Console\BaseCommand;
 
 
 class ListServicesCommand extends BaseCommand
 {
-	use Finder;
-	use Command;
+	use FinderTrait, CommandTrait;
 	/**
 	 * The console command name.
 	 *

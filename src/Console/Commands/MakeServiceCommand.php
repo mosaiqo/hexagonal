@@ -10,19 +10,23 @@
 
 namespace Mosaiqo\Hexagonal\Console\Commands;
 
-use Mosaiqo\Hexagonal\Finder\Traits\Finder;
-use Mosaiqo\Hexagonal\Console\Traits\Command;
-use Mosaiqo\Hexagonal\Filesystem\Traits\Filesystem;
+use Mosaiqo\Hexagonal\Finder\Traits\FinderTrait;
+use Mosaiqo\Hexagonal\Console\Traits\CommandTrait;
+use Mosaiqo\Hexagonal\Filesystem\Traits\FilesystemTrait;
 use Mosaiqo\Hexagonal\Generators\ServiceGenerator;
 use Symfony\Component\Console\Input\InputArgument;
 use Mosaiqo\Hexagonal\Console\BaseCommand;
 
 
+/**
+ * Class MakeServiceCommand
+ * @package Mosaiqo\Hexagonal\Console\Commands
+ * @author Boudy de Geer <boudydegeer@mosaiqo.com>
+ */
 class MakeServiceCommand extends BaseCommand
 {
-	use Finder;
-	use Command;
-	use Filesystem;
+	use FinderTrait, CommandTrait, FilesystemTrait;
+
 	/**
 	 * The base namespace for this command.
 	 *
@@ -87,6 +91,9 @@ class MakeServiceCommand extends BaseCommand
 		}
 	}
 
+	/**
+	 * @return array
+	 */
 	public function getArguments()
 	{
 		return [

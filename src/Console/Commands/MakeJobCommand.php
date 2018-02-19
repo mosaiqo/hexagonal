@@ -10,21 +10,24 @@
 
 namespace Mosaiqo\Hexagonal\Console\Commands;
 
-use Mosaiqo\Hexagonal\Console\Traits\Command;
-use Mosaiqo\Hexagonal\Filesystem\Traits\Filesystem;
-use Mosaiqo\Hexagonal\Finder\Traits\Finder;
+use Mosaiqo\Hexagonal\Console\Traits\CommandTrait;
+use Mosaiqo\Hexagonal\Filesystem\Traits\FilesystemTrait;
+use Mosaiqo\Hexagonal\Finder\Traits\FinderTrait;
 use Mosaiqo\Hexagonal\Generators\JobGenerator;
 use Mosaiqo\Hexagonal\Str;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
-use MosaiqoHexagonalConsoleBaseCommand;
+use Mosaiqo\Hexagonal\Console\BaseCommand;
 
 
+/**
+ * Class MakeJobCommand
+ * @package Mosaiqo\Hexagonal\Console\Commands
+ * @author Boudy de Geer <boudydegeer@mosaiqo.com>
+ */
 class MakeJobCommand extends BaseCommand
 {
-	use Finder;
-	use Command;
-	use Filesystem;
+	use FinderTrait, CommandTrait, FilesystemTrait;
 	/**
 	 * The console command name.
 	 *
@@ -69,6 +72,9 @@ class MakeJobCommand extends BaseCommand
 		}
 	}
 
+	/**
+	 * @return array
+	 */
 	public function getArguments()
 	{
 		return [
@@ -77,6 +83,9 @@ class MakeJobCommand extends BaseCommand
 		];
 	}
 
+	/**
+	 * @return array
+	 */
 	public function getOptions()
 	{
 		return [

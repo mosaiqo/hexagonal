@@ -1,4 +1,12 @@
 <?php
+/******************************************************************************
+ *                                                                            *
+ * This file is part of the mosaiqo/hexagonal project.                        *
+ * Copyright (c) 2018 Boudy de Geer <boudydegeer@mosaiqo.com>                 *
+ * For the full copyright and license information, please view the LICENSE    *
+ * file that was distributed with this source code.                           *
+ *                                                                            *
+ ******************************************************************************/
 
 namespace Mosaiqo\Hexagonal\Console\Traits;
 
@@ -6,7 +14,12 @@ use Symfony\Component\Console\Helper\Table;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-trait Command
+/**
+ * Trait CommandTrait
+ * @package Mosaiqo\Hexagonal\Console\Traits
+ * @author Boudy de Geer <boudydegeer@mosaiqo.com>
+ */
+trait CommandTrait
 {
 	/**
 	 * Configure the command options.

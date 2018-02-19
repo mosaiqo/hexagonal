@@ -10,16 +10,16 @@
 
 namespace Mosaiqo\Hexagonal\Generators;
 
-use Mosaiqo\Hexagonal\Finder\Traits\Finder;
-use Mosaiqo\Hexagonal\Filesystem\Traits\Filesystem;
+use Mosaiqo\Hexagonal\Finder\Traits\FinderTrait;
+use Mosaiqo\Hexagonal\Filesystem\Traits\FilesystemTrait;
 
 use Illuminate\Filesystem\Filesystem as IlluminateFilesystem;
 
 
 class Generator
 {
-	use Finder;
-	use Filesystem;
+	use FinderTrait;
+	use FilesystemTrait;
 
 	/**
 	 * @var string
