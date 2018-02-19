@@ -80,7 +80,7 @@ class MakeServiceCommand extends BaseCommand
 			$this->info('Activate it by registering ' .
 				'<comment>' . $serviceProvider . '</comment> ' .
 				"\n" .
-				'in <comment>' . $rootNamespace . '\Foundation\Providers\ServiceProvider@register</comment> ' .
+				'in <comment>' . $rootNamespace . '\Hexagonal\Providers\ServiceProvider@register</comment> ' .
 				'with the following:' .
 				"\n"
 			);

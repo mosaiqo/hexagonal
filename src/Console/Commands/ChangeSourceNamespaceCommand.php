@@ -127,12 +127,12 @@ class ChangeSourceNamespaceCommand extends BaseCommand
 	{
 		$search = [
 			$this->findRootNamespace() . '\\Providers',
-			$this->findRootNamespace() . '\\Foundation',
+			$this->findRootNamespace() . '\\Hexagonal',
 			$this->findRootNamespace() . '\\Http\\Controllers\\',
 		];
 		$replace = [
 			$this->argument('name') . '\\Providers',
-			$this->argument('name') . '\\Foundation',
+			$this->argument('name') . '\\Hexagonal',
 			$this->argument('name') . '\\Http\\Controllers\\',
 		];
 		$this->replaceIn($this->getConfigPath('app'), $search, $replace);
