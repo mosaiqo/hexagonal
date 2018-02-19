@@ -13,11 +13,13 @@ namespace Mosaiqo\Hexagonal\Parser;
 use Mosaiqo\Hexagonal\Components\Job;
 use Mosaiqo\Hexagonal\Components\Domain;
 use Mosaiqo\Hexagonal\Components\Feature;
+use Mosaiqo\Hexagonal\Finder\Traits\FinderTrait;
 
 
 class Parser
 {
-	use Finder;
+	use FinderTrait;
+
 	const SYNTAX_STRING = 'string';
 	const SYNTAX_KEYWORD = 'keyword';
 	const SYNTAX_INSTANTIATION = 'init';
