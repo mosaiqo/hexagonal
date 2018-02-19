@@ -12,11 +12,6 @@ namespace Mosaiqo\Hexagonal\Console;
 
 use Illuminate\Console\Command;
 
-/**
- * Class BaseCommand
- * @package Mosaiqo\Hexagonal\Console
- * @author Boudy de Geer <boudydegeer@mosaiqo.com>
- */
 class BaseCommand extends Command {
 	/**
 	 * @var string
@@ -32,17 +27,4 @@ class BaseCommand extends Command {
 		return $this->stubDirectory . $path;
 	}
 
-	/**
-	 * Execute the command.
-	 *
-	 * @param InputInterface $input
-	 * @param OutputInterface $output
-	 * @return int
-	 */
-	public function execute(InputInterface $input, OutputInterface $output)
-	{
-		$this->input = $input;
-		$this->output = $output;
-		return (int) $this->handle();
-	}
 }
