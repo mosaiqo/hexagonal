@@ -24,7 +24,7 @@ use Mosaiqo\Hexagonal\Console\BaseCommand;
  */
 class MakeRequestCommand extends BaseCommand
 {
-	use FinderTrait, CommandTrait, FilesystemTrait;
+	use FinderTrait, FilesystemTrait;
 
 	/**
 	 * The console command name.
