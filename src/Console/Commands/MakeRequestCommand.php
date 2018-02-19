@@ -33,7 +33,7 @@ class MakeRequestCommand extends BaseCommand
 	 *
 	 * @var string
 	 */
-	protected $name = 'make:request';
+	protected $name = 'hexagonal:make:request';
 	/**
 	 * The console command description.
 	 *
