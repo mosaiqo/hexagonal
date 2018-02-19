@@ -10,18 +10,17 @@
 
 namespace Mosaiqo\Hexagonal\Console\Commands;
 
-use Mosaiqo\Hexagonal\Str;
-use Mosaiqo\Hexagonal\Finder\Traits\FinderTrait;
-use Mosaiqo\Hexagonal\Console\Traits\CommandTrait;
-use Mosaiqo\Hexagonal\Filesystem\Traits\FilesystemTrait;
-use Mosaiqo\Hexagonal\Generators\FeatureGenerator;
-use Symfony\Component\Console\Input\InputArgument;
 use Mosaiqo\Hexagonal\Console\BaseCommand;
+use Mosaiqo\Hexagonal\Filesystem\Traits\FilesystemTrait;
+use Mosaiqo\Hexagonal\Finder\Traits\FinderTrait;
+use Mosaiqo\Hexagonal\Generators\FeatureGenerator;
+use Mosaiqo\Hexagonal\Str;
+use Symfony\Component\Console\Input\InputArgument;
 
 
 class MakeFeatureCommand extends BaseCommand
 {
-	use FinderTrait, CommandTrait, FilesystemTrait;
+	use FinderTrait, FilesystemTrait;
 	/**
 	 * The console command name.
 	 *

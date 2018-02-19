@@ -11,12 +11,11 @@
 namespace Mosaiqo\Hexagonal\Console\Commands;
 
 use Exception;
-use Mosaiqo\Hexagonal\Generators\ModelGenerator;
-use Mosaiqo\Hexagonal\Finder\Traits\FinderTrait;
-use Mosaiqo\Hexagonal\Console\Traits\CommandTrait;
-use Mosaiqo\Hexagonal\Filesystem\Traits\FilesystemTrait;
-use Symfony\Component\Console\Input\InputArgument;
 use Mosaiqo\Hexagonal\Console\BaseCommand;
+use Mosaiqo\Hexagonal\Filesystem\Traits\FilesystemTrait;
+use Mosaiqo\Hexagonal\Finder\Traits\FinderTrait;
+use Mosaiqo\Hexagonal\Generators\ModelGenerator;
+use Symfony\Component\Console\Input\InputArgument;
 
 
 /**
@@ -26,7 +25,7 @@ use Mosaiqo\Hexagonal\Console\BaseCommand;
  */
 class MakeModelCommand extends BaseCommand
 {
-	use FinderTrait, CommandTrait, FilesystemTrait;
+	use FinderTrait, FilesystemTrait;
 
 	/**
 	 * The console command name.

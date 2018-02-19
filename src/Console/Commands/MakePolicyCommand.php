@@ -11,7 +11,6 @@
 namespace Mosaiqo\Hexagonal\Console\Commands;
 
 use Mosaiqo\Hexagonal\Finder\Traits\FinderTrait;
-use Mosaiqo\Hexagonal\Console\Traits\CommandTrait;
 use Mosaiqo\Hexagonal\Filesystem\Traits\FilesystemTrait;
 use Exception;
 use Mosaiqo\Hexagonal\Generators\PolicyGenerator;
@@ -25,7 +24,7 @@ use Mosaiqo\Hexagonal\Console\BaseCommand;
  */
 class MakePolicyCommand extends BaseCommand
 {
-	use FinderTrait, CommandTrait, FilesystemTrait;
+	use FinderTrait, FilesystemTrait;
 	/**
 	 * The console command name.
 	 *

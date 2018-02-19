@@ -11,7 +11,6 @@
 namespace Mosaiqo\Hexagonal\Console\Commands;
 
 use Exception;
-use Mosaiqo\Hexagonal\Console\Traits\CommandTrait;
 use Mosaiqo\Hexagonal\Filesystem\Traits\FilesystemTrait;
 use Mosaiqo\Hexagonal\Finder\Traits\FinderTrait;
 use Mosaiqo\Hexagonal\Generators\RequestGenerator;
